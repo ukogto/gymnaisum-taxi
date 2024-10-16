@@ -1,0 +1,17 @@
+env_config:
+  ENV_ID: 'Taxi-v3'
+  # human vs ansi vs 'rgb_array'
+  MODE: 'ansi'
+agent_config:
+  # epsilon times random action on env by agent 
+  learning_rate: 0.5
+  initial_epsilon: 1
+  epsilon_decay: 0.00004 # (1-0)/50000/2 with this assignment action become pure optimal when half episodes are completed
+  final_epsilon: 0
+  # closer to 0 means future reward is preferred less
+  discount_factor: 0.95
+episodes: 50000
+eval_interval: 100
+# off-policy vs on-policy
+agent_type: 'on-policy'
+learning_curve_filename: 'sarsa_learning_curve.png'
